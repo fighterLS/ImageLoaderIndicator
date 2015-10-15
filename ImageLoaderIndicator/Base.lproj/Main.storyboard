@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="228" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tkF-TE-uuN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomImageTableViewCell" rowHeight="228" id="5pI-uD-UsZ" customClass="CustomImageTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="228"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5pI-uD-UsZ" id="2Z8-UZ-nls">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="227.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LBA-76-Gea" customClass="CustomImageView">
+                                                    <rect key="frame" x="8" y="8" width="584" height="211.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="LBA-76-Gea" secondAttribute="trailing" constant="8" id="S5Q-kl-3h9"/>
+                                                <constraint firstAttribute="bottom" secondItem="LBA-76-Gea" secondAttribute="bottom" constant="8" id="f3a-4d-4de"/>
+                                                <constraint firstItem="LBA-76-Gea" firstAttribute="top" secondItem="2Z8-UZ-nls" secondAttribute="top" constant="8" id="kp8-W8-dJH"/>
+                                                <constraint firstItem="LBA-76-Gea" firstAttribute="leading" secondItem="2Z8-UZ-nls" secondAttribute="leading" constant="8" id="lmu-aa-aDu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="customImg" destination="LBA-76-Gea" id="Ddz-ZD-ehg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ynj-ja-PrV"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vdS-3f-5ik"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tkF-TE-uuN" secondAttribute="bottom" id="9ZH-zR-s8e"/>
+                            <constraint firstAttribute="trailing" secondItem="tkF-TE-uuN" secondAttribute="trailing" id="Hfr-ny-2Zy"/>
+                            <constraint firstItem="tkF-TE-uuN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OCV-Kb-fj7"/>
+                            <constraint firstItem="tkF-TE-uuN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RRi-Kf-yT8"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="224" y="236"/>
         </scene>
     </scenes>
 </document>
